@@ -1,0 +1,22 @@
+<template>
+  <div>
+    <h1>{{ msg }}</h1>
+    <p>{{ $route.params.color }}</p>
+    <button @click="getParam">get param</button>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        'msg': 'this is apple page'
+      }
+    },
+    methods: {
+      getParam () {
+        console.log(this.$route.params)
+      }
+    }
+  }
+</script>
