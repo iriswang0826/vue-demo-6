@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    {{ totalPrice }}
+    <apple></apple>
+    <banana></banana>
     <transition name="fade">
       <keep-alive>
         <router-view></router-view>
@@ -15,10 +18,21 @@
 </template>
 
 <script>
+import Apple from './components/apple'
+import Banana from './components/banana'
 export default {
   name: 'app',
+  components: {Apple, Banana},
+  computed: {
+    totalPrice () {
+      // return this.$store.state.totalPrice
+      return this.$store.getters.getTotal
+    }
+  },
   data () {
+    return {
 
+    }
   }
 }
 </script>
